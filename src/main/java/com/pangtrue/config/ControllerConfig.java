@@ -8,8 +8,8 @@ import com.pangtrue.controller.RegisterController;
 @Configuration
 public class ControllerConfig {
 
-	@Bean
-	public RegisterController registerController() {
-		return new RegisterController();
-	}
+    @Bean
+    public RegisterController registerController() {
+        return new RegisterController();
+    }
 }
