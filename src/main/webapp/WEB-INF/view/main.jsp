@@ -217,24 +217,24 @@
 										src="img/avatar-2.jpg" class="img-circle thumb-sm m-r-15"
 										alt="img"></span> <span class="block"><strong>John
 											smith</strong></span> <span class="media-body block">New tasks needs
-										to be done<br>
-									<small class="text-muted">10 seconds ago</small>
+										to be done<br> <small class="text-muted">10
+											seconds ago</small>
 								</span>
 							</a></li>
 							<li><a href="#"> <span class="pull-left"><img
 										src="img/avatar-3.jpg" class="img-circle thumb-sm m-r-15"
 										alt="img"></span> <span class="block"><strong>John
 											smith</strong></span> <span class="media-body block">New tasks needs
-										to be done<br>
-									<small class="text-muted">3 minutes ago</small>
+										to be done<br> <small class="text-muted">3
+											minutes ago</small>
 								</span>
 							</a></li>
 							<li><a href="#"> <span class="pull-left"><img
 										src="img/avatar-4.jpg" class="img-circle thumb-sm m-r-15"
 										alt="img"></span> <span class="block"><strong>John
 											smith</strong></span> <span class="media-body block">New tasks needs
-										to be done<br>
-									<small class="text-muted">10 minutes ago</small>
+										to be done<br> <small class="text-muted">10
+											minutes ago</small>
 								</span>
 							</a></li>
 							<li>
@@ -257,20 +257,20 @@
 							</li>
 							<li><a href="#"> <span class="pull-left"><i
 										class="fa fa-user-plus fa-2x text-info"></i></span> <span>New
-										user registered<br>
-									<small class="text-muted">5 minutes ago</small>
+										user registered<br> <small class="text-muted">5
+											minutes ago</small>
 								</span>
 							</a></li>
 							<li><a href="#"> <span class="pull-left"><i
 										class="fa fa-diamond fa-2x text-primary"></i></span> <span>Use
-										animate.css<br>
-									<small class="text-muted">5 minutes ago</small>
+										animate.css<br> <small class="text-muted">5
+											minutes ago</small>
 								</span>
 							</a></li>
 							<li><a href="#"> <span class="pull-left"><i
 										class="fa fa-bell-o fa-2x text-danger"></i></span> <span>Send
-										project demo files to client<br>
-									<small class="text-muted">1 hour ago</small>
+										project demo files to client<br> <small
+										class="text-muted">1 hour ago</small>
 								</span>
 							</a></li>
 
