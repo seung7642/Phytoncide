@@ -25,14 +25,19 @@ public class MemberDao {
     }
 
     public Member selectByEmail(String email) {
-        // 이메일을 가져와 해당되는 회원정보를 얻어오는건데 왜 List<Member>지? 그냥 Member 타입 변수가 아니라?
+        // JdbcTemplate#query() 메서드는 List<T> 타입 객체를 반환한다.
+        // JdbcTemplate#query() 메서드는 쿼리를 실행하고 얻어온 ResultSet객체를 Java객체로 변환한다.
+        // 두 번째 매개변수로 들어간 RowMapper<T> 클래스가 핵심이다.
         List<Member> results = jdbcTemplate.query(
                 "select * from MEMBER where EMAIL = ?", // 첫 번째 매개변수
                 new RowMapper<Member>() { // 두 번째 매개변수
                     @Override
                     public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
-                        Member member = new Member(rs.getString("EMAIL"), rs.getString("PASSWORD"),
-                                rs.getString("NAME"), rs.getTimestamp("REGDATE").toLocalDateTime());
+                        Member member = new Member(
+                                rs.getString("EMAIL"), 
+                                rs.getString("PASSWORD"),
+                                rs.getString("NAME"), 
+                                rs.getTimestamp("REGDATE").toLocalDateTime());
                         member.setId(rs.getLong("ID"));
                         return member;
                     }
