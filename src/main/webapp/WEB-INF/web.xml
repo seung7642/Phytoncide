@@ -1,52 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	version="3.1">
-	<display-name>erp</display-name>
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
-	</welcome-file-list>
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+    version="3.1">
+    
+    <display-name>erp</display-name>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
 
-	<servlet> <!-- Spring에서 프론트 컨트롤러에 속하는 DispatcherServlet 추가 -->
-		<servlet-name>dispatcher</servlet-name>
-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<init-param> <!-- 초기화 파라미터를 가져와 사용할려면 약속된 이름이어야겠네. -->
-			<param-name>contextClass</param-name>
-			<param-value>
+    <servlet> <!-- Spring에서 프론트 컨트롤러에 속하는 DispatcherServlet 추가 -->
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param> <!-- 초기화 파라미터를 가져와 사용할려면 약속된 이름이어야겠네. -->
+            <param-name>contextClass</param-name>
+            <param-value>
 				org.springframework.web.context.support.AnnotationConfigWebApplicationContext
 			</param-value>
-		</init-param>
-		<init-param> <!-- DispatcherServlet이 스프링 컨테이너를 생성할 수 있도록 설정 클래스를 초기화 파라미터로 넣어준다. -->
-			<param-name>contextConfigLocation</param-name>
-			<param-value>
-				<!-- TODO: 해당 태그에 설정 클래스를 추가해준다.(아직 설정 클래스 없음) -->
+        </init-param>
+        <init-param> <!-- DispatcherServlet이 스프링 컨테이너를 생성할 수 있도록 설정 클래스를 초기화 파라미터로 넣어준다. -->
+            <param-name>contextConfigLocation</param-name>
+            <param-value>
+                ControllerConfig.java
+                MemberConfig.java
+                MvcConfig.java
 			</param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
 
-	<servlet-mapping>
-		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/</url-pattern>
-	</servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 
-	<filter> <!-- 문자셋 인코딩을 위한 필터 추가 -->
-		<filter-name>encodingFilter</filter-name>
-		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-		<init-param>
-			<param-name>encoding</param-name>
-			<param-value>UTF-8</param-value>
-		</init-param>
-	</filter>
+    <filter> <!-- 문자셋 인코딩을 위한 필터 추가 -->
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
 
-	<filter-mapping>
-		<filter-name>encodingFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>
