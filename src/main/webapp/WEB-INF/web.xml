@@ -21,7 +21,7 @@
             <param-name>contextClass</param-name>
             <param-value>
                 org.springframework.web.context.support.AnnotationConfigWebApplicationContext
-		    </param-value>
+            </param-value>
         </init-param>
         <init-param> <!-- DispatcherServlet이 스프링 컨테이너를 생성할 수 있도록 설정 클래스를 초기화 파라미터로 넣어준다. -->
             <param-name>contextConfigLocation</param-name>
