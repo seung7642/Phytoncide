@@ -26,7 +26,8 @@ public class MemberDao {
 
     public Member selectByEmail(String email) {
         // 이메일을 가져와 해당되는 회원정보를 얻어오는건데 왜 List<Member>지? 그냥 Member 타입 변수가 아니라?
-        List<Member> results = jdbcTemplate.query("select * from MEMBER where EMAIL = ?", // 첫 번째 매개변수
+        List<Member> results = jdbcTemplate.query(
+                "select * from MEMBER where EMAIL = ?", // 첫 번째 매개변수
                 new RowMapper<Member>() { // 두 번째 매개변수
                     @Override
                     public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
