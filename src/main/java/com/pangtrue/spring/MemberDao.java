@@ -66,15 +66,21 @@ public class MemberDao {
     public void update(Member member) {
         // insert, delete, update 쿼리는 스프링의 JdbcTemplate 객체의 update() 메서드를 이용한다.
         // PreparedStatement 객체를 사용할때보다 코드가 상당히 간단해졌다.
-        jdbcTemplate.update("update MEMBER set NAME = ?, PASSWORD = ? where EMAIL = ?", member.getName(),
-                member.getPassword(), member.getEmail());
+        jdbcTemplate.update(
+                "update MEMBER set NAME = ?, PASSWORD = ? where EMAIL = ?", 
+                member.getName(),
+                member.getPassword(), 
+                member.getEmail());
     }
 
     public List<Member> selectAll() {
         List<Member> results = jdbcTemplate.query("select * from MEMBER", new RowMapper<Member>() {
             @Override
             public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
-                Member member = new Member(rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getString("NAME"),
+                Member member = new Member(
+                        rs.getString("EMAIL"), 
+                        rs.getString("PASSWORD"), 
+                        rs.getString("NAME"),
                         rs.getTimestamp("REGDATE").toLocalDateTime());
                 member.setId(rs.getLong("ID"));
                 return member;
@@ -84,7 +90,9 @@ public class MemberDao {
     }
 
     public int count() {
-        Integer count = jdbcTemplate.queryForObject("select count(*) from MEMBER", Integer.class);
+        Integer count = jdbcTemplate.queryForObject(
+                "select count(*) from MEMBER", 
+                Integer.class);
         return count;
     }
 }
