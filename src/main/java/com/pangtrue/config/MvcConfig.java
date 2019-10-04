@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc // 스프링 MVC 설정을 활성화한다. 이 설정을 사용하지 않고 설정 코드를 직접 작성하려면 백 여 줄에 가까운 코드를 입력해야 한다.
 public class MvcConfig implements WebMvcConfigurer {
 
-    @Override // DispatcherServlet의 매핑 경로를 '/'로 주었을 때, 올바르게 처리하기 위한 설정을 추가한다.
+    @Override // static resource에 대한 요청이 들어오면 톰캣에서 정의한 디폴트 서블릿으로 포워딩 
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
