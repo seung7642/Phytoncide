@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LoginController {
 
     @GetMapping("/login")
-    public void loginPage() { // GET 요청이라면 로그인 페이지를 반환
+    public String loginPage() { // GET 요청이라면 로그인 페이지를 반환
         
     }
     
     @PostMapping("/login")
-    public void login() { // POST 요청이라면 (아이디, 패스워드)를 DB값과 비교
+    public String login() { // POST 요청이라면 (아이디, 패스워드)를 DB값과 비교
         
     }
 }
