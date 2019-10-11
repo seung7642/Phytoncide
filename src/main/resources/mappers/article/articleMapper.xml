@@ -25,4 +25,24 @@
         DELETE FROM article
         WHERE article_no = #{articleNo}
     </delete>
+    
+    <select id="listAll" resultMap="ArticleResultMap">
+        <![CDATA[
+        SELECT article_no, title, content, writer, reg_date, view_cnt, file_cnt 
+        FROM article 
+        WHERE article_no > 0
+        ORDER BY article_no DESC, view_cnt DESC
+        ]]> <!-- CDATA는 뭐지? -->
+    </select>
+    
+    <resultMap type="Article" id="ArticleResultMap">
+        <id property="articleNo" column="article_no"/>
+        <result property="title" column="title" />
+        <result property="content" column="content" />
+        <result property="writer" column="writer" />
+        <result property="regDate" column="reg_date" />
+        <result property="viewCnt" column="view_cnt" />
+        <result property="replyCnt" column="reply_cnt" />
+        <result property="fileCnt" column="file_cnt" />
+    </resultMap>
 </mapper>
