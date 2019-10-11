@@ -6,11 +6,11 @@ import com.pangtrue.article.model.ArticleVO;
 
 public interface ArticleService {
 
-    void create(ArticleVO article) throws Exception;
+    void create(ArticleVO articleVO) throws Exception;
     
     ArticleVO read(Integer articleNo) throws Exception;
     
-    void update(ArticleVO article) throws Exception;
+    void update(ArticleVO articleVO) throws Exception;
     
     void delete(Integer articleNo) throws Exception;
     
