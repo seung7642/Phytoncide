@@ -2,23 +2,23 @@ package com.pangtrue.article.service;
 
 import java.util.List;
 
-import com.pangtrue.article.model.Article;
+import com.pangtrue.article.model.ArticleVO;
 
 public interface ArticleService {
 
-    void create(Article article) throws Exception;
+    void create(ArticleVO article) throws Exception;
     
-    Article read(Integer articleNo) throws Exception;
+    ArticleVO read(Integer articleNo) throws Exception;
     
-    void update(Article article) throws Exception;
+    void update(ArticleVO article) throws Exception;
     
     void delete(Integer articleNo) throws Exception;
     
-    List<Article> listAll() throws Exception;
+    List<ArticleVO> listAll() throws Exception;
     
     int countArticles() throws Exception;
     
-    List<Article> listSearch() throws Exception;
+    List<ArticleVO> listSearch() throws Exception;
     
     int countSearchedArticles() throws Exception;
 }

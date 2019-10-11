@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.pangtrue.article.model.Article;
+import com.pangtrue.article.model.ArticleVO;
 import com.pangtrue.article.service.ArticleService;
 
 @Controller
@@ -33,7 +33,7 @@ public class ArticleController {
     }
     
     @PostMapping("/write")
-    public String writePost(Article article) throws Exception {
+    public String writePost(ArticleVO article) throws Exception {
         logger.info("normal writePost() called..."); 
         logger.info(article.toString());
         articleService.create(article);
