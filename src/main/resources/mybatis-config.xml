@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration
+<!DOCTYPE configuration   
         PUBLIC "-//mybatis.org/DTD Config 3.0/EN"
-        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">  <!-- XML 문서의 유효성 체크를 위해 필요 -->
         
 <configuration>
-
-    <typeAliases>
+    <environments default="development">
+        <environment id="development"> <!-- 트랜잭션 관리와 커넥션 풀링을 위한 환경설정 -->
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="org/mybatis/example/BlogMapper.xml"/>
+    </mappers>
+    
+    
+    <!-- <typeAliases>
         <typeAlias type="" alias="" />
-    </typeAliases>
+    </typeAliases> -->
 
 </configuration>
