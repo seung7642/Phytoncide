@@ -1,12 +1,13 @@
 package com.pangtrue.user.controller;
 
 import org.mindrot.jbcrypt.BCrypt;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.inject.Inject;
 
 import com.pangtrue.user.model.UserVO;
 import com.pangtrue.user.service.UserService;
@@ -17,7 +18,7 @@ public class UserRegisterController {
 
     private final UserService userService;
     
-    @Autowired
+    @Inject
     public UserRegisterController(UserService userService) {
         this.userService = userService;
     }
