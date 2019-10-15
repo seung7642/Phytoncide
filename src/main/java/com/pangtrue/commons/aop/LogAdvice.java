@@ -17,7 +17,7 @@ public class LogAdvice {
     
     @Around("execution(* com.pangtrue.erp..*Controller.*(..))"
             + " or execution(* com.pangtrue.erp..service..*Impl.*(..))"
-            + " or execution(* com.pangtrue.erp..persistence..*Impl.*(..))")
+            + " or execution(* com.pangtrue.erp..dao..*Impl.*(..))")
     public Object logPrint(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         long start = System.currentTimeMillis();
 
@@ -36,14 +36,14 @@ public class LogAdvice {
 
         long end = System.currentTimeMillis();
 
-        logger.info(name + type + "."+proceedingJoinPoint.getSignature().getName() + "()");
+        logger.info(name + type + "." + proceedingJoinPoint.getSignature().getName() + "()");
         logger.info("Argument/Parameter : " + Arrays.toString(proceedingJoinPoint.getArgs()));
         if (result != null) {
             logger.info("Return Value : " + result.toString());
         } else {
             logger.info("Return Type : void");
         }
-        logger.info("Running Time : " + (end-start));
+        logger.info("Running Time : " + (end - start));
         logger.info("----------------------------------------------------------------");
 
         return result;
