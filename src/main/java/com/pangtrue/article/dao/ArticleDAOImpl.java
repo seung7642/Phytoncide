@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.pangtrue.article.model.ArticleVO;
+import com.pangtrue.commons.paging.Criteria;
+import com.pangtrue.commons.paging.SearchCriteria;
 
 public class ArticleDAOImpl implements ArticleDAO {
 
@@ -54,13 +56,21 @@ public class ArticleDAOImpl implements ArticleDAO {
         return sqlSession.selectList(NAMESPACE + ".listPaging", page);
     }
 
-//    List<ArticleVO> listCriteria(Criteria criteria) throws Exception;
-//
-//    int countArticles(Criteria criteria) throws Exception;
-//
-//    List<ArticleVO> listSearch(SearchCriteria searchCriteria) throws Exception;
-//
-//    int countSearchedArticles(SearchCriteria searchCriteria) throws Exception;
+    public List<ArticleVO> listCriteria(Criteria criteria) throws Exception {
+        return sqlSession.selectList(NAMESPACE + ".listCriteria", criteria);
+    }
+
+    public int countArticles(Criteria criteria) throws Exception {
+        return sqlSession.selectOne(NAMESPACE + ".countArticles", criteria);
+    }
+
+    public List<ArticleVO> listSearch(SearchCriteria searchCriteria) throws Exception {
+        return sqlSession.selectList(NAMESPACE + ".listSearch", searchCriteria);
+    }
+
+    public int countSearchedArticles(SearchCriteria searchCriteria) throws Exception {
+        return sqlSession.selectOne(NAMESPACE + ".countSearchedArticles", searchCriteria);
+    }
 
     @Override
     public void updateReplyCnt(Integer articleNo, int amount) throws Exception {

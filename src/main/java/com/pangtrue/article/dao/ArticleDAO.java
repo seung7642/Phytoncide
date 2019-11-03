@@ -3,6 +3,8 @@ package com.pangtrue.article.dao;
 import java.util.List;
 
 import com.pangtrue.article.model.ArticleVO;
+import com.pangtrue.commons.paging.Criteria;
+import com.pangtrue.commons.paging.SearchCriteria;
 
 public interface ArticleDAO {
 
@@ -18,13 +20,13 @@ public interface ArticleDAO {
 
     List<ArticleVO> listPaging(int page) throws Exception;
 
-//    List<ArticleVO> listCriteria(Criteria criteria) throws Exception;
-//
-//    int countArticles(Criteria criteria) throws Exception;
-//
-//    List<ArticleVO> listSearch(SearchCriteria searchCriteria) throws Exception;
-//
-//    int countSearchedArticles(SearchCriteria searchCriteria) throws Exception;
+    List<ArticleVO> listCriteria(Criteria criteria) throws Exception;
+
+    int countArticles(Criteria criteria) throws Exception;
+
+    List<ArticleVO> listSearch(SearchCriteria searchCriteria) throws Exception;
+
+    int countSearchedArticles(SearchCriteria searchCriteria) throws Exception;
 
     void updateReplyCnt(Integer articleNo, int amount) throws Exception;
 
