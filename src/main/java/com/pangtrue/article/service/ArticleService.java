@@ -3,6 +3,8 @@ package com.pangtrue.article.service;
 import java.util.List;
 
 import com.pangtrue.article.model.ArticleVO;
+import com.pangtrue.commons.paging.Criteria;
+import com.pangtrue.commons.paging.SearchCriteria;
 
 public interface ArticleService {
 
@@ -16,9 +18,9 @@ public interface ArticleService {
     
     List<ArticleVO> listAll() throws Exception;
     
-    int countArticles() throws Exception;
+    int countArticles(Criteria criteria) throws Exception;
     
-    List<ArticleVO> listSearch() throws Exception;
+    List<ArticleVO> listSearch(SearchCriteria searchCriteria) throws Exception;
     
-    int countSearchedArticles() throws Exception;
+    int countSearchedArticles(SearchCriteria searchCriteria) throws Exception;
 }

@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.pangtrue.article.dao.ArticleDAO;
 import com.pangtrue.article.model.ArticleVO;
+import com.pangtrue.commons.paging.Criteria;
+import com.pangtrue.commons.paging.SearchCriteria;
 
 @Service
 public class ArticleServiceImpl implements ArticleService {
@@ -56,17 +58,17 @@ public class ArticleServiceImpl implements ArticleService {
     }
     
     @Override
-    public int countArticles() throws Exception {
-
+    public int countArticles(Criteria criteria) throws Exception {
+        return articleDAO.countArticles(criteria);
     }
     
     @Override
-    public List<ArticleVO> listSearch() throws Exception {
-        
+    public List<ArticleVO> listSearch(SearchCriteria searchCriteria) throws Exception {
+        return articleDAO.listSearch(searchCriteria);
     }
     
     @Override
-    public int countSearchedArticles() throws Exception {
-        
+    public int countSearchedArticles(SearchCriteria searchCriteria) throws Exception {
+        return articleDAO.countSearchedArticles(searchCriteria);
     }
 }
