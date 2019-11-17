@@ -2,12 +2,14 @@ package com.pangtrue.user.controller;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.inject.Inject;
+import javax.validation.Valid;
 
 import com.pangtrue.user.model.UserVO;
 import com.pangtrue.user.service.UserService;
@@ -31,7 +33,7 @@ public class UserRegisterController {
     
     // 회원가입 처리
     @PostMapping("/register")
-    public String registerPOST(UserVO userVO, RedirectAttributes redirectAttributes) throws Exception {
+    public String registerPOST(@Valid UserVO userVO, Errors errors, RedirectAttributes redirectAttributes) throws Exception {
         String hashedPw = BCrypt.hashpw(userVO.getUserPw(), BCrypt.gensalt());
         userVO.setUserPw(hashedPw);
         userService.register(userVO);
