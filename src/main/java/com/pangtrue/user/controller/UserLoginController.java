@@ -3,6 +3,7 @@ package com.pangtrue.user.controller;
 import java.util.Date;
 
 import javax.inject.Inject;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.util.WebUtils;
 
+import com.pangtrue.user.model.LoginDTO;
 import com.pangtrue.user.model.UserVO;
 import com.pangtrue.user.service.UserService;
 
@@ -40,7 +42,7 @@ public class UserLoginController {
     @PostMapping("/login")
     public String loginPOST(@Valid LoginDTO loginDTO, Errors errors, HttpSession httpSession, Model model) throws Exception {
         UserVO userVO = userService.login(loginDTO);
-        if (userVO == null || !BCrypt.checkpw(loginDTO.getUserPw(), userVO.getUserPw())) {
+        if (userVO == null || !BCrypt.checkpw(loginDTO.getUserPassword(), userVO.getUserPw())) {
             return null;
         }
         
