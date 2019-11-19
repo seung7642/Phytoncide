@@ -6,42 +6,54 @@
     
     <display-name>erp</display-name>
 
-    <servlet> <!-- default-servlet으로 들어온 요청을 스프링에서 제공하는 DispatcherServlet 클래스가 처리한다. -->
+    <!--DataSource, MyBatis 설정 xml 경로-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/spring-config/applicationContext.xml</param-value>
+    </context-param>
+
+    <!--리스너-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!--servlet dispatcher 설정 xml 경로-->
+    <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <init-param> <!-- 초기화 파라미터를 가져와 사용할려면 약속된 이름이어야겠네. -->
-            <param-name>contextClass</param-name>
-            <param-value>
-                org.springframework.web.context.support.AnnotationConfigWebApplicationContext
-            </param-value>
-        </init-param>
-        <init-param> <!-- DispatcherServlet이 스프링 컨테이너를 생성할 수 있도록 설정 클래스를 초기화 파라미터로 넣어준다. -->
+        <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>
-                ControllerConfig.java
-                MemberConfig.java
-                MvcConfig.java
-            </param-value>
+            <param-value>/WEB-INF/spring-config/dispatcher-servlet.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+    <!--servlet mapping 설정-->
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <url-pattern>/</url-pattern> <!-- url-pattern이 '/'인 서블릿을 default-servlet이라 한다 -->
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <filter> <!-- 문자셋 인코딩을 위한 필터 추가 -->
-        <filter-name>encodingFilter</filter-name>
+    <!--한글 인코딩 설정-->
+    <filter>
+        <filter-name>encoding</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
         <init-param>
             <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
-
     <filter-mapping>
-        <filter-name>encodingFilter</filter-name>
+        <filter-name>encoding</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>hiddenHttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>hiddenHttpMethodFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 </web-app>
