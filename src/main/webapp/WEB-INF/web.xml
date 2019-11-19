@@ -19,7 +19,7 @@
 
     <!--servlet dispatcher 설정 xml 경로-->
     <servlet>
-        <servlet-name>dispatcher</servlet-name>
+        <servlet-name>dispatcherServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
@@ -30,7 +30,7 @@
 
     <!--servlet mapping 설정-->
     <servlet-mapping>
-        <servlet-name>dispatcher</servlet-name>
+        <servlet-name>dispatcherServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
