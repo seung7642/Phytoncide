@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="com.pangtrue.erp.mappers.user.UserMapper">
+<mapper namespace="com.pangtrue.mappers.user.UserMapper">
     <resultMap id="userVOResultMap" type="UserVO">
         <id property="userId" column="user_id"/>
         <result property="userPw" column="user_pw"/>
