@@ -11,7 +11,7 @@
                            http://www.springframework.org/schema/aop/spring-aop.xsd 
                            http://www.springframework.org/schema/tx 
                            http://www.springframework.org/schema/tx/spring-tx.xsd">
-                           
+    
     <!-- DataSource log4jdbc-log4j2 설정 -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
@@ -35,9 +35,8 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
     
-    <tx:annotation-driven/> <!-- 등록된 빈 중에서 @Transactional이 붙은 클래스/인터페이스/메서드를 찾아 Transaction Advice 적용 -->
-
     <context:component-scan base-package="com.pangtrue"/>
     
-</beans>
-                           
+    <tx:annotation-driven/> <!-- 등록된 빈 중에서 @Transactional이 붙은 클래스/인터페이스/메서드를 찾아 Transaction Advice 적용 -->
+
+</beans>     

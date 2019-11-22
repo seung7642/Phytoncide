@@ -15,8 +15,14 @@
        
     <!-- Spring MVC관련 설정만을 분리하기 위한 설정 XML -->
     
+    <!-- base-package 속성 값에 해당하는 패키지 내부의 클래스들을 모두 조사 -->
+    <context:component-scan base-package="com.pangtrue"/>
+    
     <!-- 애노테이션 인식 -->
     <mvc:annotation-driven />
+    
+    <!-- AOP 설정을 통한 자동적인 Proxy 객체 생성을 위한 설정 -->
+    <aop:aspectj-autoproxy/>
     
     <!--정적자원 매핑-->
     <mvc:resources mapping="/resources/**" location="/resources/"/>
@@ -27,15 +33,9 @@
     
     <!-- ViewResolver 설정 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/views/" />
-        <property name="suffix" value=".jsp" />
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
-    
-    <!-- base-package 속성 값에 해당하는 패키지 내부의 클래스들을 모두 조사 -->
-    <context:component-scan base-package="com.pangtrue"/>
-
-    <!-- AOP 설정을 통한 자동적인 Proxy 객체 생성을 위한 설정 -->
-    <aop:aspectj-autoproxy/>
     
     <!-- 파일 업로드 MultipartResolver 설정 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
