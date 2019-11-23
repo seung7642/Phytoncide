@@ -30,4 +30,8 @@ public interface UserDAO {
 
     // 회원 프로필 사진파일 수정
     void userImgUpdate(String userId, String userImg) throws Exception;
+
+    UserVO insert(UserVO user);
+
+    UserVO read(String id);
 }

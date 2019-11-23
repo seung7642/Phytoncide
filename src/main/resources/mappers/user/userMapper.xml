@@ -16,6 +16,14 @@
         <result property="userPoint" column="user_point"/>
     </resultMap>
     
+    <select id="selectUserById" parameterType="string" resultType="UserVO">
+        SELECT * FROM user WHERE user_id = #{userId}
+    </select>
+    
+    <insert id="insertUser" parameterType="UserVO">
+        INSERT INTO user VALUES(#{userId}, #{userPw}, #{userName}, #{userEmail})
+    </insert>
+    
     <select id="login" resultMap="userVOResultMap">
         SELECT * 
         FROM user

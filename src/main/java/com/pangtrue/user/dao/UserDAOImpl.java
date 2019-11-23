@@ -14,12 +14,24 @@ import com.pangtrue.user.model.UserVO;
 @Repository
 public class UserDAOImpl implements UserDAO {
 
-    private static final String NAMESPACE = "com.pangtrue.erp.mappers.user.UserMapper";
+    private static final String NAMESPACE = "com.pangtrue.mappers.user.UserMapper";
     private final SqlSession sqlSession;
     
     @Autowired
     public UserDAOImpl(SqlSession sqlSession) {
         this.sqlSession = sqlSession;
+    }
+    
+    @Override
+    public UserVO read(String id) {
+        UserVO user = sqlSession.selectOne(NAMESPACE + ".selectUserById", id);
+        return user;
+    }
+    
+    @Override
+    public UserVO insert(UserVO user) {
+        sqlSession.update(NAMESPACE + ".insertUser", user);
+        return user;
     }
     
     // 로그인 처리

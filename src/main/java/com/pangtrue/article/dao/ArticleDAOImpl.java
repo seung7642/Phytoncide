@@ -6,15 +6,16 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.pangtrue.article.model.ArticleVO;
 import com.pangtrue.commons.paging.Criteria;
 import com.pangtrue.commons.paging.SearchCriteria;
 
+@Repository
 public class ArticleDAOImpl implements ArticleDAO {
 
-    private static final String NAMESPACE = "com.pangtrue.erp.mappers.article.ArticleMapper";
-    
+    private static final String NAMESPACE = "com.pangtrue.mappers.article.ArticleMapper";
     private final SqlSession sqlSession;
     
     @Autowired
