@@ -6,8 +6,8 @@
 <configuration>
     
     <typeAliases>
-        <typeAlias type="com.pangtrue.article.model.ArticleVO" alias="ArticleVO"/>
-        <typeAlias type="com.pangtrue.user.model.UserVO" alias="UserVO"/>
+        <typeAlias alias="ArticleVO" type="com.pangtrue.article.model.ArticleVO" />
+        <typeAlias alias="UserVO" type="com.pangtrue.user.model.UserVO" />
     </typeAliases>
 
 </configuration>
