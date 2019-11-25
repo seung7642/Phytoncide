@@ -15,9 +15,9 @@ public class LogAdvice {
 
     private static final Logger logger = LoggerFactory.getLogger(LogAdvice.class);
     
-    @Around("execution(* com.pangtrue.erp..*Controller.*(..))"
-            + " or execution(* com.pangtrue.erp..service..*Impl.*(..))"
-            + " or execution(* com.pangtrue.erp..dao..*Impl.*(..))")
+    @Around("execution(* com.pangtrue..*Controller.*(..))"
+            + " or execution(* com.pangtrue..service..*Impl.*(..))"
+            + " or execution(* com.pangtrue..dao..*Impl.*(..))")
     public Object logPrint(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         long start = System.currentTimeMillis();
 
