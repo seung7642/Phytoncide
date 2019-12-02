@@ -20,11 +20,15 @@
             <h1>
                             메인 페이지
             </h1>
+            <ol class="breadcrumb">
+                <li><a href="${path}/"><i class="fa fa-dashboard"></i> home</a></li>
+            </ol>
         </section>
         
         <!-- Main content -->
         <section class="content container-fluid">
             <p>메인 페이지입니다.</p>
+            컨텍스크 경로 : ${pageContext.request.contextPath}  ${path }
         </section>
     </div>
     <!-- ./content-wrapper -->

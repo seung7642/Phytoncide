@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
 <html>
 <%@ include file="../include/head.jsp" %>
@@ -6,7 +6,7 @@
 <div class="register-box">
     <div class="register-logo">
         <a href="${path}/">
-            <b>DoubleS</b>&nbsp MVC-BOARD
+            <b>Pangtrue</b>&nbsp erp
         </a>
     </div>
 

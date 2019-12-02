@@ -17,7 +17,7 @@
     <!-- iCheck -->
     <link rel="stylesheet" href="${path }/plugins/iCheck/square/blue.css">
     <%--lightbox--%>
-    <link rel="stylesheet" href="${path }/bower_components/lightbox/css/lightbox.css">
+    <link rel="stylesheet" href="${path }/bower_components/lightbox2/dist/css/lightbox.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="${path }/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
