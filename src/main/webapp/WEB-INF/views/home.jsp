@@ -3,7 +3,7 @@
 
 <%@ include file="include/head.jsp"%>
 
-<body class="hold-transition skin-blue sidebar-mini layout-boxed">
+<body class="hold-transition skin-blue">
 
 <div class="wrapper">
 
@@ -38,6 +38,8 @@
 
 </div>
 <!-- ./wrapper -->
+
+<%@ include file="include/plugin_js.jsp" %>
 
 </body>
 </html>
