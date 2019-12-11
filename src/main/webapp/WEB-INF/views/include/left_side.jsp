@@ -44,43 +44,7 @@
         
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
-            <li class="header">테스트 예제</li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-folder"></i> <span>예제</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="${path}/reply/test"><i class="fa fa-comment"></i> 댓글 </a></li>
-                    <li><a href="${path}/file/form/uploadPage"><i class="fa fa-file"></i> 파일 업로드(Form)</a></li>
-                    <li><a href="${path}/file/ajax/uploadPage"><i class="fa fa-file"></i> 파일 업로드(Ajax Drop)</a></li>
-                    <li><a href="${path}/interceptor/doA"><i class="fa fa-mail-forward"></i> 인터셉터</a></li>
-                </ul>
-            </li>
             <li class="header">게시판</li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-edit"></i> <span>게시판(기본)</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="${path}/article/write"><i class="fa fa-pencil"></i> 게시글 쓰기</a></li>
-                    <li><a href="${path}/article/list"><i class="fa fa-list"></i> 게시글 목록</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-edit"></i> <span>게시판(페이징)</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="${path}/article/paging/write"><i class="fa fa-pencil"></i> 게시글 쓰기</a></li>
-                    <li><a href="${path}/article/paging/list"><i class="fa fa-list"></i> 게시글 목록</a></li>
-                </ul>
-            </li>
             <li class="treeview">
                 <a href="#"><i class="fa fa-edit"></i> <span>게시판(페이징+검색)</span>
                     <span class="pull-right-container">
@@ -92,7 +56,40 @@
                     <li><a href="${path}/article/paging/search/list"><i class="fa fa-list"></i> 게시글 목록</a></li>
                 </ul>
             </li>
-
+            <li class="header">Manage</li>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-edit"><span>매출관리</span></i>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-pencil"></i>매출현황</a></li>
+                    <li><a href="#"><i class="fa fa-pencil"></i>매출</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-edit"><span>직원관리</span></i>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-pencil"></i>월급</a></li>
+                    <li><a href="#"><i class="fa fa-pencil"></i>휴가일수</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-edit"><span>자원관리</span></i>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-pencil"></i>보유자원</a></li>
+                    <li><a href="#"><i class="fa fa-pencil"></i>매출</a></li>
+                </ul>
+            </li>
         </ul>
         <!-- /.sidebar-menu -->
         
