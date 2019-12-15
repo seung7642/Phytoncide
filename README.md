@@ -2,14 +2,15 @@
 
 **Mapping URL**
 
-1. `/user`  /register
-   ​	      /login
+1. `/user`  
+   ​	 /register
+   ​	 /login
 
-2. `/article`  /list
+2. `/article`  
 
-   ​                    /read
-
-   ​                    /write
+   ​        /list
+   ​	/read
+   ​	/write
 
 3. `/sales`
 
