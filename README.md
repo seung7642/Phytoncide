@@ -1,4 +1,4 @@
-# MerchantResourcePlanning
+# Phytoncide
 
 ERP를 모티브로 삼아 그보다는 작은 규모의 **소상공인들을 대상으로 자원 관리를 돕는** 웹 어플리케이션.
 
