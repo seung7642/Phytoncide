@@ -1,45 +1,115 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" %>
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<!DOCTYPE html>
 <html>
 
 <%@ include file="include/head.jsp"%>
 
-<body class="hold-transition skin-blue">
+<body class="hold-transition sidebar-mini skin-blue">
+	<div class="wrapper">
+		<!-- Main Header -->
+		<%@ include file="include/main_header.jsp"%>
 
-<div class="wrapper">
+		<!-- Left side column. contains the logo and sidebar -->
+		<%@ include file="include/left_side.jsp"%>
 
-    <!-- Main Header -->
-    <%@ include file="include/main_header.jsp"%>
-    
-    <!-- Left side column. contains the logo and sidebar -->
-    <%@ include file="include/left_side.jsp"%>
-    
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                            메인 페이지
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="${path}/"><i class="fa fa-dashboard"></i> home</a></li>
-            </ol>
-        </section>
-        
-        <!-- Main content -->
-        <section class="content container-fluid">
-            <p>메인 페이지입니다.</p>
-            컨텍스크 경로 : ${pageContext.request.contextPath}  ${path }
-        </section>
-    </div>
-    <!-- ./content-wrapper -->
-    
-    <!-- Main Footer -->
-    <%@ include file="include/main_footer.jsp"%>
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<div class="content-header">
+				<div class="container-fluid">
+					<div class="row mb-2">
+						<div class="col-sm-6">
+							<h1 class="m-0 text-dark">Starter Page</h1>
+						</div>
+						<!-- /.col -->
+						<div class="col-sm-6">
+							<ol class="breadcrumb float-sm-right">
+								<li class="breadcrumb-item"><a href="#">Home</a></li>
+								<li class="breadcrumb-item active">Starter Page</li>
+							</ol>
+						</div>
+						<!-- /.col -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.container-fluid -->
+			</div>
+			<!-- /.content-header -->
 
-</div>
-<!-- ./wrapper -->
+			<!-- Main content -->
+			<div class="content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title">Card title</h5>
 
-<%@ include file="include/plugin_js.jsp" %>
+									<p class="card-text">Some quick example text to build on
+										the card title and make up the bulk of the card's content.</p>
+
+									<a href="#" class="card-link">Card link</a> <a href="#"
+										class="card-link">Another link</a>
+								</div>
+							</div>
+
+							<div class="card card-primary card-outline">
+								<div class="card-body">
+									<h5 class="card-title">Card title</h5>
+
+									<p class="card-text">Some quick example text to build on
+										the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="card-link">Card link</a> <a href="#"
+										class="card-link">Another link</a>
+								</div>
+							</div>
+							<!-- /.card -->
+						</div>
+						<!-- /.col-md-6 -->
+						<div class="col-lg-6">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="m-0">Featured</h5>
+								</div>
+								<div class="card-body">
+									<h6 class="card-title">Special title treatment</h6>
+
+									<p class="card-text">With supporting text below as a
+										natural lead-in to additional content.</p>
+									<a href="#" class="btn btn-primary">Go somewhere</a>
+								</div>
+							</div>
+
+							<div class="card card-primary card-outline">
+								<div class="card-header">
+									<h5 class="m-0">Featured</h5>
+								</div>
+								<div class="card-body">
+									<h6 class="card-title">Special title treatment</h6>
+
+									<p class="card-text">With supporting text below as a
+										natural lead-in to additional content.</p>
+									<a href="#" class="btn btn-primary">Go somewhere</a>
+								</div>
+							</div>
+						</div>
+						<!-- /.col-md-6 -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.container-fluid -->
+			</div>
+			<!-- /.content -->
+		</div>
+		<!-- ./content-wrapper -->
+
+		<!-- Main Footer -->
+		<%@ include file="include/main_footer.jsp"%>
+
+	</div>
+	<!-- ./wrapper -->
+
+	<%@ include file="include/plugin_js.jsp"%>
 
 </body>
 </html>
