@@ -42,7 +42,7 @@ public class UserLoginController {
     @PostMapping("/login")
     public String loginPOST(@Valid LoginDTO loginDTO, Errors errors, HttpSession httpSession, Model model) throws Exception {
         UserVO userVO = userService.login(loginDTO);
-        if (userVO == null || !BCrypt.checkpw(loginDTO.getUserPassword(), userVO.getUserPw())) {
+        if (userVO == null || !BCrypt.checkpw(loginDTO.getUserPassword(), userVO.getUserPassword())) {
             return null;
         }
         
@@ -51,10 +51,10 @@ public class UserLoginController {
         if (loginDTO.isUseCookie()) {
             int amount = 60 * 60 * 24 * 7;
             Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
-            userService.keepLogin(userVO.getUserId(), httpSession.getId(), sessionLimit);
+            userService.keepLogin(userVO.getUserEmail(), httpSession.getId(), sessionLimit); // 세션 만기날짜 설정
         }
         
-        return "redirect:/main";
+        return "redirect:/erp";
     }
     
     @PostMapping("/logout")
@@ -69,10 +69,10 @@ public class UserLoginController {
                 loginCookie.setPath("/");
                 loginCookie.setMaxAge(0);
                 response.addCookie(loginCookie);
-                userService.keepLogin(userVO.getUserId(), "none", new Date());
+                userService.keepLogin(userVO.getUserEmail(), "none", new Date());
             }
         }
 
-        return "/user/logout";
+        return "redirect:/erp/user/login";
     }
 }

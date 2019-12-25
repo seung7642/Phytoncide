@@ -17,6 +17,19 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     private static final Logger logger = LoggerFactory.getLogger(LoginInterceptor.class);
 
     @Override
+    public boolean preHandle(HttpServletRequest req, HttpServletResponse res, Object handler) throws Exception {
+
+        HttpSession httpSession = req.getSession(false);
+        if (httpSession != null) {
+            Object obj = httpSession.getAttribute("user");
+            if (obj != null) return true;
+        }
+        
+        res.sendRedirect(req.getContextPath() + "/user/login");
+        return false;
+    }
+    
+    @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 
         HttpSession httpSession = request.getSession();
@@ -42,18 +55,5 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
             response.sendRedirect(destination != null ? (String) destination : "/");
         }
 
-    }
-
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-
-        HttpSession httpSession = request.getSession();
-        // 기존의 로그인 정보 제거
-        if (httpSession.getAttribute(LOGIN) != null) {
-            logger.info("clear login data before");
-            httpSession.removeAttribute(LOGIN);
-        }
-
-        return true;
     }
 }

@@ -19,23 +19,22 @@ import com.pangtrue.article.service.ArticleService;
 public class ArticleController {
     
     private static final Logger logger = LoggerFactory.getLogger(ArticleController.class);
-    
-    @Inject
     private ArticleService articleService;
     
+    @Inject
     public ArticleController(ArticleService articleService) {
         this.articleService = articleService;
     }
     
     @GetMapping("/write")
     public String writeGet() {
-        logger.info("normal writeGet() called...");
+        logger.info("Article#writeGet() 호출");
         return "article/normal/write"; // View 이름 반환
     }
     
     @PostMapping("/write")
     public String writePost(ArticleVO article) throws Exception {
-        logger.info("normal writePost() called..."); 
+        logger.info("Article#writePost() 호출"); 
         logger.info(article.toString());
         articleService.create(article);
         
@@ -44,7 +43,7 @@ public class ArticleController {
     
     @GetMapping("/list")
     public String list(Model model) throws Exception {
-        logger.info("normal list() called...");
+        logger.info("Article#list() 호출");
         model.addAttribute("articles", articleService.listAll());
         
         return "article/normal/list";
@@ -52,7 +51,7 @@ public class ArticleController {
     
     @GetMapping("/read")
     public String read(@RequestParam("articleNo") int articleNo, Model model) throws Exception {
-        logger.info("normal read() called...");
+        logger.info("Article#read() 호출");
         model.addAttribute("article", articleService.read(articleNo));
         
         return "article/normal/read";

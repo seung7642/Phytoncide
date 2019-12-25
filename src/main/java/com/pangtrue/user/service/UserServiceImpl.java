@@ -3,6 +3,8 @@ package com.pangtrue.user.service;
 import java.util.Date;
 
 import org.mindrot.jbcrypt.BCrypt;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,7 @@ import com.pangtrue.user.model.UserVO;
 @Service
 public class UserServiceImpl implements UserService {
 
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
     private final UserDAO userDAO;
 
     @Autowired
@@ -22,6 +25,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserVO login(LoginDTO loginDTO) throws Exception {
+        logger.info("==로그인 요청==");
         return userDAO.login(loginDTO);
     }
 

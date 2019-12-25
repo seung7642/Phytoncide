@@ -15,10 +15,9 @@ import com.pangtrue.asset.service.AssetService;
 public class AssetController {
     
     private static final Logger logger = LoggerFactory.getLogger(AssetController.class);
-    
-    @Inject
     private AssetService assetService;
 
+    @Inject
     public AssetController(AssetService assetService) {
         this.assetService = assetService;
     }
@@ -30,7 +29,7 @@ public class AssetController {
     }
     
     @PostMapping("/asset")
-    public String assetPOST(AssetVO assetVO) throws Exception {
+    public String assetPOST(AssetVO assetVO) throws Exception { // 첫 번째 파라미터 assetVO는 커맨드 객체
         logger.info("assetPOST 호출됨");
         assetService.register(assetVO);
         

@@ -1,13 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" %>
 
+<!-- Main Footer -->
 <footer class="main-footer">
-
     <!-- To the right -->
-    <div class="pull-right hidden-xs">
-        Anything you want
+    <div class="float-right d-none d-sm-inline">
+    Software Engineering
     </div>
-    
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2019 <a href="#">Pangtrue</a>.</strong> All rights reserved.
-    
+    <strong>Copyright &copy; 2019 <a href="#">피톤치드</a>.</strong> All rights reserved.
 </footer>

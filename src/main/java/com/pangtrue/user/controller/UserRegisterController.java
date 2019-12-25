@@ -34,8 +34,9 @@ public class UserRegisterController {
     // 회원가입 처리
     @PostMapping("/register")
     public String registerPOST(@Valid UserVO userVO, Errors errors, RedirectAttributes redirectAttributes) throws Exception {
-        String hashedPw = BCrypt.hashpw(userVO.getUserPw(), BCrypt.gensalt());
-        userVO.setUserPw(hashedPw);
+        String hashedPassword = BCrypt.hashpw(userVO.getUserPassword(), BCrypt.gensalt()); // 비밀번호 해싱
+        userVO.setUserPassword(hashedPassword);
+        
         userService.register(userVO);
         redirectAttributes.addFlashAttribute("msg", "REGISTERED");
         
